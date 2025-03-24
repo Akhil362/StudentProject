@@ -2,22 +2,21 @@ package com.StudentProject.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import com.StudentProject.bean.StudentBean;
-
 import com.StudentProject.dao.StudentDao;
 
 /**
  * Servlet implementation class Registrationservlet
  */
-@WebServlet("/registrationservlet")
+@WebServlet("/Registrationservlet")
 public class Registrationservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,30 +34,29 @@ public class Registrationservlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		@SuppressWarnings("unused")
+
 		String Name = request.getParameter("Name");
-		@SuppressWarnings("unused")
+
 		String Mobileno = request.getParameter("Mobileno");
-		@SuppressWarnings("unused")
+
 		String Address = request.getParameter("Address");
-		@SuppressWarnings("unused")
+
 		String Email = request.getParameter("Email");
-		@SuppressWarnings("unused")
+
 		String Tech = request.getParameter("Tech");
-		@SuppressWarnings("unused")
+
 		String College = request.getParameter("College");
 
 		StudentBean s = new StudentBean(); // As we need to use across the project creating the
 
-		s.setName("Name");
-		s.setMobileno("Mobileno");
-		s.setAddress("Address");
-		s.setEmail("Email");
-		s.setTech("Tech");
-		s.setCollege("College");
-
-		@SuppressWarnings("unused")
-
+		s.setName(Name);
+		s.setMobileno(Mobileno);
+		s.setAddress(Address);
+		s.setEmail(Email);
+		s.setTech(Tech);
+		s.setCollege(College);
+		System.out.println("Received Name:" +Name);
+		System.out.println("Received Address:" +Address);
 		StudentDao rd = new StudentDao();
 		int result = StudentDao.Insertdata(s); // we will have value for result
 
@@ -74,7 +72,6 @@ public class Registrationservlet extends HttpServlet {
 			Fail.forward(request, response);
 		}
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

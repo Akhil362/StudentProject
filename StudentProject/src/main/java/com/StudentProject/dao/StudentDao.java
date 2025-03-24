@@ -16,7 +16,7 @@ public class StudentDao {
 	public static int Insertdata(StudentBean ss) {
 		int result = 0;
 		
-		String query = "insert into student values (?,?,?,?,?,?)";
+		String query = "insert into Student values (?,?,?,?,?,?)";
 		
 		
 		try {

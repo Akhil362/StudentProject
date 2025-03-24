@@ -14,7 +14,7 @@ public class MySqlConnection {
 		
 		try {
 			 Class.forName("com.mysql.cj.jdbc.Driver");
-			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration","root","1234");
+			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Registration","root","1234");
 			
 		} catch (Exception e) {
 		
